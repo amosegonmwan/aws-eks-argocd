@@ -7,7 +7,7 @@ spec:
   project: default
   source:
      repoURL: https://github.com/amosegonmwan/aws-eks-argocd.git
-     targetRevision: HEAD
+     targetRevision: main
      path: argocd
   destination:
     server: https://kubernetes.default.svc
