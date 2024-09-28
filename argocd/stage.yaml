@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-prod
+  name: my-stage
   namespace: argocd
 spec: 
   project: default
   source:
      repoURL: https://github.com/amosegonmwan/aws-eks-argocd.git
      targetRevision: main
-     path: prod
+     path: stage
   destination:
     server: https://kubernetes.default.svc
-    namespace: prod
+    namespace: stage
 
   syncPolicy:
     syncOptions:
