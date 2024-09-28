@@ -1,21 +1,21 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
-  name: myapp-deployment
-spec:
-  selector:
-    matchLabels:
-     app: myapp
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: myapp
-    spec:
-       containers:
-       - name: myapp-container
-         image: nginx
-         ports:
-         - protocol: TCP
-           containerPort: 81
-           targetPort: 80
+  name: myapp-argo-application
+  namespace: argocd
+spec: 
+  project: default
+  source:
+     repoURL: https://github.com/amosegonmwan/aws-eks-argocd.git
+     targetRevision: HEAD
+     path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
