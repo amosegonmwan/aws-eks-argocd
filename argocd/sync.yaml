@@ -1,9 +1,10 @@
+#
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: sync
   namespace: argocd
-spec: 
+spec:  
   project: default
   source:
      repoURL: https://github.com/amosegonmwan/aws-eks-argocd.git
