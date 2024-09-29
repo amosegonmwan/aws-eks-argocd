@@ -19,6 +19,12 @@ spec:
             namespace: prod
             repo: aws-eks-argocd 
 
+          - app: my-stage
+            path: stage
+            revision: main 
+            namespace: stage
+            repo: aws-eks-argocd 
+
   template:
     metadata:
       name: '{{app}}'
