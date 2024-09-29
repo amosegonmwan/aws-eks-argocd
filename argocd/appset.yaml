@@ -17,7 +17,7 @@ spec:
             path: prod
             revision: main 
             namespace: prod
-            repo: aws-eks-argocd
+            repo: aws-eks-argocd 
 
   template:
     metadata:
