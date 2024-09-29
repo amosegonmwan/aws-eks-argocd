@@ -25,6 +25,12 @@ spec:
             namespace: stage
             repo: aws-eks-argocd 
 
+          - app: my-monitoring
+            path: prod
+            revision: main 
+            namespace: monitoring
+            repo: argocd-demo-1 
+
   template:
     metadata:
       name: '{{app}}'
