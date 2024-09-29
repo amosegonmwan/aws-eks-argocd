@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    chart: ./helm/my-nginx
-    repoURL: https://github.com/amosegonmwan/aws-eks-argocd.git
+    chart: my-nginx
+    repoURL: git+https://github.com/amosegonmwan/aws-eks-argocd@my-nginx?ref=main&sparse=0
     targetRevision: main
     helm:
       releaseName: my-nginx
