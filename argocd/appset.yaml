@@ -13,6 +13,12 @@ spec:
             namespace: dev
             repo: aws-eks-argocd
 
+          - app: my-prod
+            path: prod
+            revision: main 
+            namespace: prod
+            repo: aws-eks-argocd
+
   template:
     metadata:
       name: '{{app}}'
